@@ -10,5 +10,11 @@ static void PrintMatching(List<int> values, Func<int, bool> condition)
 static bool IsHighReading(int value)
 {
     // TODO: Definer "high" som minst 60.
+    int high = 60;
+    if (high <= 60)
+    {
+        return false;
+    }
+
     return false;
 }
