@@ -11,7 +11,19 @@ List<Artifact> artifacts = new List<Artifact>
 
 // TODO: Lag tre separate Where-queries.
 var hRisk = artifacts.Where(artifact => artifact.Risk >=60);
-foreach(Artifact artifact in hRisk)
+foreach(var risk in hRisk)
 {
-    Console.WriteLine(artifact);
+    Console.WriteLine($"High risk artifact: {risk.Name}");
+}
+
+var aOrigin = artifacts.Where(artifact => artifact.Origin == "Moon");
+foreach (var origin in aOrigin)
+{
+    Console.WriteLine($"Origin Moon: {origin.Name}");
+}
+
+var containsE = artifacts.Where(artifact => artifact.Name.Contains("e",StringComparison.CurrentCultureIgnoreCase));
+foreach(var e in containsE)
+{
+    Console.WriteLine($"Contains 'e': {e.Name}");
 }
