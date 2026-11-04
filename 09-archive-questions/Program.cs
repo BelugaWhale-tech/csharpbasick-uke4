@@ -1,5 +1,3 @@
-using System.Runtime.Intrinsics.X86;
-
 List<Artifact> artifacts = new List<Artifact>
 {
     new Artifact("Echo Stone", "Moon", 73),
