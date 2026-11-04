@@ -10,3 +10,9 @@ List<Artifact> artifacts = new List<Artifact>
 
 
 // TODO: Bruk Any og Count til å svare på spørsmålene.
+
+var hRisk = artifacts.Any(artifacts => artifacts.Risk > 90);
+    Console.WriteLine($"Risk greater then 90: {hRisk}");
+
+var aMars = artifacts.Count(artifacts => artifacts.Origin =="Mars");
+    Console.WriteLine($"Artifacts from Mars: {aMars}");
