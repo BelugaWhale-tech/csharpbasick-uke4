@@ -1,3 +1,4 @@
+
 List<Artifact> artifacts = new List<Artifact>
 {
     new Artifact("Echo Stone", "Moon", 73),
@@ -10,3 +11,20 @@ List<Artifact> artifacts = new List<Artifact>
 
 
 // TODO: Bruk Select til tre ulike projeksjoner.
+var artifactName = artifacts.Select(artifact => artifact.Name);
+foreach(var artifact in artifactName)
+{
+    Console.WriteLine(artifact);
+}
+
+var aRisk = artifacts.Select(artifact => artifact.Risk);
+foreach(int risk in aRisk)
+{
+    Console.WriteLine(risk);
+}
+
+var aForm = artifacts.Select(artifact => $"{artifact.Name} ({artifact.Origin})");
+foreach(var form in aForm)
+{
+    Console.WriteLine(form);
+}
