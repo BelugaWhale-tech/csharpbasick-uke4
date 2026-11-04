@@ -20,7 +20,7 @@ foreach(string artifact in result)
 var sortall = artifacts.OrderBy(artifacts => artifacts.Risk);
 foreach(var artifact in sortall)
 {
-    Console.WriteLine($" Artifact risk: {artifact.Risk} Artifact name: {artifact.Name}");
+    Console.WriteLine($"Artifact risk: {artifact.Risk} Artifact name: {artifact.Name}");
 }
 
 
