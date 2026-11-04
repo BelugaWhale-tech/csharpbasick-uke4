@@ -10,3 +10,8 @@ List<Artifact> artifacts = new List<Artifact>
 
 
 // TODO: Lag tre separate Where-queries.
+var hRisk = artifacts.Where(artifact => artifact.Risk >=60);
+foreach(Artifact artifact in hRisk)
+{
+    Console.WriteLine(artifact);
+}
