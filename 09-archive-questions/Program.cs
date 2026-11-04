@@ -1,3 +1,5 @@
+using System.Runtime.Intrinsics.X86;
+
 List<Artifact> artifacts = new List<Artifact>
 {
     new Artifact("Echo Stone", "Moon", 73),
@@ -19,3 +21,6 @@ var aMars = artifacts.Count(artifacts => artifacts.Origin =="Mars");
 
 var aTotal = artifacts.Count();
     Console.WriteLine($"Number of artifacts: {aTotal}");
+
+var aVenus = artifacts.Any(artifacts => artifacts.Origin == "Venus");
+    Console.WriteLine($"Artifact origin is Venus: {aVenus}");
