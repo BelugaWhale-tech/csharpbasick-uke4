@@ -16,3 +16,6 @@ var hRisk = artifacts.Any(artifacts => artifacts.Risk > 90);
 
 var aMars = artifacts.Count(artifacts => artifacts.Origin =="Mars");
     Console.WriteLine($"Artifacts from Mars: {aMars}");
+
+var aTotal = artifacts.Count();
+    Console.WriteLine($"Number of artifacts: {aTotal}");
