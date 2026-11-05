@@ -1,11 +1,4 @@
-List<Artifact> artifacts = new List<Artifact>
-{
-    new Artifact("Echo Stone", "Moon", 73),
-    new Artifact("Broken Compass", "Earth", 12),
-    new Artifact("Glass Seed", "Mars", 48),
-    new Artifact("Signal Cube", "Moon", 91),
-    new Artifact("Cold Lens", "Europa", 28)
-};
+ArtifactService artifactService =new ArtifactService();
 
 while (true)
 {
@@ -20,15 +13,14 @@ while (true)
 
     if (choice == "1")
     {
-        foreach (Artifact artifact in artifacts)
+        foreach (Artifact artifact in artifactService.GetArtifacts())
         {
             Console.WriteLine($"{artifact.Name} | {artifact.Origin} | {artifact.Risk}");
         }
     }
     else if (choice == "2")
-    {
-        List<Artifact> highRisk = artifacts.Where(a => a.Risk >= 60).ToList();
-        foreach (Artifact artifact in highRisk)
+    {  
+        foreach (Artifact artifact in artifactService.HighRisk())
         {
             Console.WriteLine($"{artifact.Name} | {artifact.Risk}");
         }
@@ -40,9 +32,7 @@ while (true)
 
         if (!string.IsNullOrWhiteSpace(origin))
         {
-            List<Artifact> matches = artifacts
-                .Where(a => a.Origin.Equals(origin, StringComparison.OrdinalIgnoreCase))
-                .ToList();
+            List<Artifact> matches = artifactService.SearchOrigin(origin);
 
             foreach (Artifact artifact in matches)
             {
